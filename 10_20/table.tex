@@ -1,0 +1,95 @@
+%定義
+
+%\documentclass[10pt,twocolumn]{jarticle} 
+\documentclass[10pt]{jarticle} 
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{euler}
+\usepackage{color}
+
+\pagestyle{empty}
+
+%余白とか
+
+\setlength{\topmargin}{-2cm} 
+\setlength{\textheight}{26.5cm} 
+\setlength{\textwidth}{18.5cm}
+\setlength{\oddsidemargin}{-1.3cm} 
+\setlength{\columnsep}{.5cm}
+\newcommand{\noin}{\noindent}
+\catcode`@=\active \def@{\hspace{0.9bp}-\hspace{0.9bp}}
+\newtheorem{dfn}{定義}[section]
+
+
+%タイトル
+
+\title{第一回 アルゴリズム勉強会}
+\setcounter{footnote}{1}
+%\author{原田 崇司\if0\thanks{神奈川大学大学院理学研究科情報科学専攻 田中研究室}\fi}
+\author{原田 崇司\thanks{神奈川大学大学院 理学研究科 情報科学専攻 田中研究室}}
+\date{\today}
+\西暦
+
+%タイトル作成
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% 1. 何について話すか(概要) => 2. 具体例(図だけで十分) => 3. 結論(一番伝えたい事)
+%
+% 結論に向けて, 流れを意識して書く.
+%
+% 構文. 主語, 述語, 目的語をはっきり書く.
+%
+% 受動態を使わない.
+%
+% 辞書, 参考書, 先生に伺うことより, 適切な単語, 表現で文章を作成する.
+%
+% 内容を削る. 必要最小限
+%
+% コンマを列挙以外で2つ以上使う, ``~の~の'', の如きは使わない.
+\noindent{\Large {\color{red} 一流の科学者でも間違えます．原田の言うことは間違っていると思って参加して下さい．}}
+
+\section{The Role of Algorithms in Computing}
+\begin{itemize}
+ \item アルゴリズムとは何か 
+  \begin{itemize}
+   \item 適当に定義された（解釈の仕方が一通りしかない）計算手続き
+   \item ある入力から，それに対応する出力へと変換する計算ステップ
+   \item 適当に記述された計算問題(computational problem)を解くツール
+   \item 有限性(Finiteness)，明確性(Difiniteness)、入力(Input)，出力(Output)，実効性(Effectiveness)の五つの特徴を持つ演算(operation)のシーケンス(Knuth の定義．というより，多分，一般のアルゴリズムの定義)
+    \begin{itemize}
+     \item 有限性(Finiteness): アルゴリズムは，有限のステップで停止しなければならない．
+     \item 明確性(Difiniteness): アルゴリズムの各ステップは，正確に定義されてなければならない．例えば，アルゴリズムのステップに，''$10 \div 0$ の商'' などの定義されていない演算を用いることはできない．
+     \item 入力(Input): アルゴリズムは，$0$以上の入力を持つ．
+     \item 出力(Output): アルゴリズムは，$1$以上の出力を持つ．
+     \item 実効性(Effectiveness): アルゴリズムは，紙と鉛筆を用いて実際に確かめることができなければならない．例えば，十進展開の無限列や，物理的に紙に書かれた線分の長さなどを，演算の対象とするとことはできない．また，''$P = NP$ ならば，$n = n + 1$ を行う'' などの，未だに解けてない問題の解を利用する演算は許さない．
+    \end{itemize}
+  \end{itemize}
+ \item どうしてアルゴリズムが必要なのか
+\end{itemize}
+\begin{table}[ht]
+ \centering{
+  %\caption{ルールリスト}
+  \begin{tabular}{c|c|c|c|c|c|c|c}
+      & $1$ second & $1$ minute & $1$ hour & $1$ day & $1$ month & $1$ year & $1$ century \\ \hline
+$\lg n$ &          &            &          &         &           &          & \\ \hline
+$\sqrt{n}$ &          &            &          &         &           &          & \\ \hline
+$n$ & $10^{6}$ & $6 \times 10^{7}$ & $3.6 \times 10^{9}$ & $8.64 \times 10^{10}$ & $2.59 \times 10^{12}$ & $9.46 \times 10^{14}$ & $9.46 \times 10^{16}$ \\ \hline
+$n \lg n$     &          &            &          &         &           &          & \\ \hline
+$n^{2}$     &          &            &          &         &           &          & \\ \hline
+$n^{3}$     &          &            &          &         &           &          & \\ \hline
+$2^{n}$     &          &            &          &         &           &          & \\ \hline
+$n!$     &          &            &          &         &           &          & 
+  \end{tabular}
+  %\label{growth table}
+}
+\end{table}
+
+\end{document}
