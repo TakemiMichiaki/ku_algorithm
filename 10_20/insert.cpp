@@ -31,7 +31,6 @@ int main()
 		int key = A[j];
 		int i = j - 1;
 		while (i >= 0 && A[i] > key) {
-			int tmp = A[i];
 			A[i+1] = A[i];
 			--i;
 		}
