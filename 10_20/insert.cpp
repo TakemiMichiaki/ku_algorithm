@@ -1,33 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-template
-<
-	typename TYPE,
-	std::size_t SIZE
->
-
-std::size_t array_length(const TYPE (&array)[SIZE])
-{
-	return SIZE;
-}
+void non_decreasing(int *, int);
 
 int main()
 {
 	int n;
 	cin >> n;
-	int A[n];
+	int *A = new int [n];
 
 	for (int i = 0; i < n; ++i) {
 		cin >> A[i];
 	}
 
-	for (int i = 0; i < sizeof(A)/sizeof(A[0]); ++i) {
+	for (int i = 0; i < n; ++i) {
+	//for (int i = 0; i < array_length(A); ++i) {
 		cout << A[i] << ' ';
 	}
 	cout << endl;
 
-	for (int j = 1; j < sizeof(A)/sizeof(A[0]); ++j) {
+	non_decreasing(A, n);
+
+	for (int i = 0; i < n; ++i) {
+		cout << A[i] << ' ';
+	}
+
+	delete[] A;
+
+	cout << endl;
+
+	return 0;
+}
+
+void non_decreasing(int *A, int n) 
+{
+	for (int j = 1; j < n; ++j) {
 		int key = A[j];
 		int i = j - 1;
 		while (i >= 0 && A[i] > key) {
@@ -36,18 +43,10 @@ int main()
 		}
 		A[i+1] = key;
 		// debug
-		for (int i = 0; i < sizeof(A)/sizeof(A[0]); ++i) {
+		for (int i = 0; i < n; ++i) {
 			cout << A[i] << ' ';
 		}
 		cout << endl;
 		// debug
 	}
-
-	for (int i = 0; i < sizeof(A)/sizeof(A[0]); ++i) {
-		cout << A[i] << ' ';
-	}
-
-	cout << endl;
-
-	return 0;
 }
