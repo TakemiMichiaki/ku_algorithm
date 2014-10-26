@@ -1,0 +1,92 @@
+%定義
+
+%\documentclass[10pt,twocolumn]{jarticle} 
+\documentclass[10pt]{jarticle} 
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{euler}
+\usepackage{color}
+\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{algpseudocode}
+\usepackage{pseudocode}
+%% \algtext*{EndWhile}
+%% \algtext*{EndIf}
+%% \algtext*{EndFor}
+
+%% \newcommand\NoDo{\renewcommand\algorithmicdo{}}
+%% \newcommand\ReDo{\renewcommand\algorithmicdo{\textbf{do}}}
+%% \newcommand\NoThen{\renewcommand\algorithmicthen{}}
+%% \newcommand\ReThen{\renewcommand\algorithmicthen{\textbf{then}}}
+
+
+\pagestyle{empty}
+
+%余白とか
+
+\setlength{\topmargin}{-2cm} 
+\setlength{\textheight}{26.5cm} 
+\setlength{\textwidth}{18.5cm}
+\setlength{\oddsidemargin}{-1.3cm} 
+\setlength{\columnsep}{.5cm}
+\newcommand{\noin}{\noindent}
+\catcode`@=\active \def@{\hspace{0.9bp}-\hspace{0.9bp}}
+\newtheorem{dfn}{定義}[section]
+
+
+%タイトル
+
+\title{第二回 アルゴリズム勉強会}
+\setcounter{footnote}{1}
+%\author{原田 崇司\if0\thanks{神奈川大学大学院理学研究科情報科学専攻 田中研究室}\fi}
+\author{原田 崇司\thanks{神奈川大学大学院 理学研究科 情報科学専攻 田中研究室}}
+\date{\today}
+\西暦
+
+%タイトル作成
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+% 1. 何について話すか(概要) => 2. 具体例(図だけで十分) => 3. 結論(一番伝えたい事)
+%
+% 結論に向けて, 流れを意識して書く.
+%
+% 構文. 主語, 述語, 目的語をはっきり書く.
+%
+% 受動態を使わない.
+%
+% 辞書, 参考書, 先生に伺うことより, 適切な単語, 表現で文章を作成する.
+%
+% 内容を削る. 必要最小限
+%
+% コンマを列挙以外で2つ以上使う, ``~の~の'', の如きは使わない.
+\noindent{\Large {\color{red} 一流の科学者でも間違えます．原田の言うことは間違っていると思って参加して下さい．}}
+
+%\section{The Role of Algorithms in Computing}
+
+%% \begin{algorithm}
+%%  \begin{algorithmic}
+%%   \NoDo
+%%   \For{$j = 2$}\TO
+%%    \State $\leftarrow$
+%%   \EndFor
+%%  \end{algorithmic}
+%% \end{algorithm}
+
+\begin{algorithmic}
+\begin{pseudocode}{linear-search}{\empty}
+
+  \FOR i = 0 \TO 10 \\
+    i += 1
+
+\end{pseudocode}
+ \end{algorithmic}
+
+\end{document}
